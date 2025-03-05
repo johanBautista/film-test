@@ -1,0 +1,91 @@
+.header {
+  background-color: $dark-bg;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Sección del logo y la navegación */
+.header__logo-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-right: 2.5rem;
+  color: $dark-text;
+}
+
+.header__nav {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 1.5rem;
+  }
+}
+
+.header__nav-item {
+  font-size: 0.875rem;
+  color: $dark-text;
+  text-decoration: none;
+  &:hover {
+    color: $dark-accent;
+  }
+}
+
+/* Sección de búsqueda */
+.header__search-container {
+  flex-grow: 1;
+  margin: 0 1rem;
+  max-width: 36rem;
+  position: relative;
+}
+
+.header__search-input {
+  width: 100%;
+  background-color: $dark-secondary;
+  border-radius: 9999px;
+  padding: 0.25rem 1rem 0.25rem 2.5rem;
+  font-size: 0.875rem;
+  border: 1px solid $dark-border;
+}
+
+.header__search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: var(--gray-400);
+}
+
+/* Sección de usuario y favoritos */
+.header__user-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header__user-actions-item {
+  font-size: 0.875rem;
+  color: $dark-text;
+  text-decoration: none;
+  &:hover {
+    color: $dark-accent;
+  }
+}
+
+.header__user-icon {
+  width: 2rem;
+  height: 2rem;
+  background-color: $dark-accent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
