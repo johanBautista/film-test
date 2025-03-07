@@ -1,3 +1,5 @@
+@import "@/assets/styles/_variables.scss";
+
 //home view styles
 .home {
   display: flex;
@@ -34,13 +36,14 @@
     padding: 10px 20px;
     background: $dark-accent;
     border: none;
+    border-radius: 4px;
     color: white;
     font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
 
     &:hover {
-      background: tomato;
+      background: $test;
     }
   }
 }
@@ -113,11 +116,12 @@
     padding: 8px 16px;
     background: $dark-accent;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
     transition: 0.3s;
 
     &:hover {
-      background: greenyellow;
+      background: $test;
     }
   }
 }

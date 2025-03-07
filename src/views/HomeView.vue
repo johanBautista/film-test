@@ -11,7 +11,3 @@ import HeroSection from "../components/home/HeroSection.vue";
 import SubscriptionPlans from "../components/home/SubscriptionPlans.vue";
 import FeaturedContent from "../components/home/FeaturedContent.vue";
 </script>
-
-<style scoped>
-@import "@/assets/styles/home.scss";
-</style>

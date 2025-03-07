@@ -24,7 +24,11 @@
           <a href="#" class="footer__social-item">
             <font-awesome-icon :icon="['fab', 'youtube']" />
           </a>
-          <a href="#" class="footer__social-item">
+          <a
+            href="https://www.linkedin.com/in/johanbautista/"
+            class="footer__social-item"
+            target="_blank"
+          >
             <font-awesome-icon icon="coffee" />
           </a>
         </div>
