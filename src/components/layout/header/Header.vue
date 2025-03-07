@@ -16,7 +16,7 @@
     <div class="header__search-container">
       <input type="search" placeholder="Search" class="header__search-input" />
       <span class="header__search-icon">
-        <SearchIcon class="h-4 w-4 text-gray-400" />
+        <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
       </span>
     </div>
 

@@ -1,0 +1,16 @@
+@import "../variables.scss";
+.movie-list {
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: $dark-primary;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+}
