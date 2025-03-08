@@ -36,3 +36,21 @@ export const getMovieSimilarId = async (id: number) => {
     throw error;
   }
 };
+
+export const getMoviesGenres = async () => {
+  try {
+    const response = await apiClient.get("genre/movie/list");
+    return response.data.genres;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getTrendingMovies = async () => {
+  try {
+    const response = await apiClient.get("trending/movie/day");
+    return response.data.results;
+  } catch (error) {
+    throw error;
+  }
+};

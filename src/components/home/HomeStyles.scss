@@ -9,41 +9,43 @@
 
 //hero component styles
 .hero {
-  background: url("@/assets/banner.jpg") center/cover no-repeat;
-  height: 400px;
+  width: 100%;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  background: linear-gradient(135deg, #191654, #43c6ac);
+  color: $dark-text;
+  padding: $spacing-medium;
 
   &__content {
     max-width: 600px;
   }
 
   &__title {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-small;
   }
 
   &__subtitle {
     font-size: 1.2rem;
-    margin-top: 0.5rem;
+    margin-bottom: $spacing-medium;
   }
 
   &__button {
-    margin-top: 1rem;
-    padding: 10px 20px;
-    background: $dark-accent;
+    background: $accent;
+    color: $dark-bg;
     border: none;
-    border-radius: 4px;
-    color: white;
+    padding: 0.75rem 1.5rem;
     font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 
     &:hover {
-      background: $test;
+      background: darken($accent, 10%);
     }
   }
 }
@@ -52,67 +54,99 @@
 .featured {
   text-align: center;
   padding: 2rem 0;
-
   &__title {
-    font-size: 1.8rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
+    color: #ffffffdf;
+    font-weight: normal;
   }
 
   &__grid {
-    display: flex;
-    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
+    &-trending {
+      overflow: hidden;
+      border-radius: 8px;
+    }
   }
 
-  &__item {
-    width: 150px;
+  &__genres {
+    padding: 40px 20px;
+    margin: 40px 20px;
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      &-pill {
+        padding: 10px 16px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 100;
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #ffffffdf;
+        text-decoration: underline;
+        border: 1px solid #ffe10065;
+      }
+    }
   }
 
   &__image {
     width: 100%;
     border-radius: 8px;
   }
-
-  &__name {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-  }
 }
 
 // SubscriptionsPlans component styles
 .plans {
-  text-align: center;
-  padding: 2rem 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  &__item {
+    width: 300px;
+    height: 300px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 
   &__title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: $dark-text;
-  }
-
-  &__list {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  &__item {
-    background: $dark-secondary;
-    padding: 1rem;
-    border-radius: 8px;
-  }
-
-  &__name {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+    text-align: center;
   }
 
   &__price {
     font-size: 1rem;
-    margin: 0.5rem 0;
+    font-weight: normal;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: $dark-accent;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+
+    &-item {
+      margin-bottom: 5px;
+    }
   }
 
   &__button {
+    width: 100%;
+    margin-top: 2.5rem;
     padding: 8px 16px;
     background: $dark-accent;
     border: none;
@@ -121,7 +155,7 @@
     transition: 0.3s;
 
     &:hover {
-      background: $test;
+      background: $dark-accent-hover;
     }
   }
 }

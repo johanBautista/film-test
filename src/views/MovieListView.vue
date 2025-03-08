@@ -1,6 +1,6 @@
 <template>
   <section class="list">
-    <h2 class="list-title">Películas Populares</h2>
+    <h2 class="list-title">Popular films</h2>
 
     <div v-if="loading">Cargando...</div>
     <div v-else-if="error">{{ error }}</div>
