@@ -4,6 +4,8 @@ import {
   faUser,
   faCoffee,
   faMagnifyingGlass,
+  faStar,
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
@@ -11,6 +13,7 @@ import {
   faYoutube,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
 
 library.add(
   faUser,
@@ -19,7 +22,10 @@ library.add(
   faYoutube,
   faInstagram,
   faCoffee,
-  faMagnifyingGlass
+  faStar,
+  faStarRegular,
+  faMagnifyingGlass,
+  faHeart
 );
 
 export { FontAwesomeIcon };

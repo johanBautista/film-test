@@ -11,7 +11,9 @@
     <div class="movie-card__back">
       <h3 class="movie-card__name">{{ movie.title }}</h3>
       <p class="movie-card__description">{{ movie.overview }}</p>
-      <button class="movie-card__button">Ver más</button>
+      <router-link :to="`/movie/${movie.id}`" class="movie-card__button">
+        Ver más
+      </router-link>
     </div>
   </div>
 </template>

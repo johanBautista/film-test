@@ -1,0 +1,145 @@
+@import "../../../assets/styles/variables.scss";
+
+.page {
+  display: flex;
+  color: $dark-text;
+
+  .page-sidebar {
+    width: 25%;
+    padding: 1rem;
+    &__poster {
+      width: 278px;
+      object-fit: fill;
+      border-radius: 2px;
+    }
+    &__description {
+      margin: 1rem 0;
+    }
+    &__separator {
+      margin: 1rem 0;
+      border: none;
+      height: 1px;
+      background-color: #ccc;
+    }
+    &__rating {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    &__comment {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      &-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .page-content {
+    width: 75%;
+    padding: 1rem;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__scene img {
+      width: 100%;
+      object-fit: cover;
+    }
+    &__separator {
+      margin: 1rem 0;
+      border: none;
+      height: 1px;
+      background-color: #ccc;
+    }
+    &__chapter {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      &-title {
+        font-size: 2rem;
+        font-weight: 500;
+      }
+      &-link {
+        color: $dark-text;
+        font-size: 1rem;
+      }
+      &-description {
+        margin: 2rem 0;
+      }
+    }
+    &__title-section {
+      font-size: 1.7rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+    }
+    &__actors,
+    &__movies {
+      display: flex;
+      gap: 1rem;
+      &-item {
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+          height: 180px;
+          object-fit: contain;
+          border-radius: 2px;
+          transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover img {
+          transform: scale(1.1);
+          filter: blur(2px) brightness(70%);
+        }
+
+        &-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.6);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+          pointer-events: none;
+        }
+
+        &:hover .page-content__actors-item-overlay {
+          opacity: 1;
+        }
+
+        &-name {
+          color: white;
+          font-size: 0.8rem;
+          font-weight: bold;
+          text-align: center;
+          padding: 0.5rem;
+        }
+      }
+    }
+
+    &__genres {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      &-pill {
+        color: #fff;
+        background-color: #8e3c5c;
+        border-radius: 20px;
+        padding: 5px 15px;
+        font-weight: 500;
+        font-size: 14px;
+        display: inline-block;
+      }
+    }
+  }
+}
