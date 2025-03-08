@@ -1,6 +1,8 @@
 @import "../../../assets/styles/variables.scss";
 
 .page {
+  margin: 5rem 0;
+  padding: 3rem;
   display: flex;
   color: $dark-text;
 
@@ -8,7 +10,7 @@
     width: 25%;
     padding: 1rem;
     &__poster {
-      width: 278px;
+      width: 100%;
       object-fit: fill;
       border-radius: 2px;
     }
@@ -21,20 +23,50 @@
       height: 1px;
       background-color: #ccc;
     }
+    &__title-section {
+      font-size: 1.7rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
     &__rating {
       display: flex;
+      justify-content: center;
+      margin-top: 2rem;
       align-items: center;
       gap: 0.5rem;
+      .icon {
+        font-size: 5rem;
+      }
+      span {
+        font-size: 2rem;
+      }
     }
-    &__comment {
+    &__comments {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-      &-avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      background: #1e2a47;
+      border-radius: 8px;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        background: #f9f9f917;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+      }
+
+      &-item-image {
+        color: goldenrod;
+      }
+
+      &__comment-text {
+        font-size: 0.9rem;
+        color: #1e2a47;
       }
     }
   }
@@ -46,6 +78,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      &-title {
+        font-size: 4rem;
+        font-weight: normal;
+      }
     }
     &__scene img {
       width: 100%;

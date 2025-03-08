@@ -1,22 +1,27 @@
 <template>
   <section class="plans">
-    <h2 class="plans__title">Elige tu plan</h2>
-    <div class="plans__list">
-      <div class="plans__item" v-for="plan in plans" :key="plan.name">
-        <h3 class="plans__name">{{ plan.name }}</h3>
-        <p class="plans__price">{{ plan.price }}</p>
-        <button class="plans__button">Suscribirse</button>
-      </div>
+    <div class="plans__item" v-for="plan in plans" :key="plan.name">
+      <h3 class="plans__title">{{ plan.name }}</h3>
+      <p class="plans__price">{{ plan.price }}</p>
+      <ul class="plans__list">
+        <li
+          v-for="feature in plan.features"
+          :key="feature"
+          class="plans__list-item"
+        >
+          {{ feature }}
+        </li>
+      </ul>
+      <button class="plans__button">Subscribe</button>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const plans = [
-  { name: "Básico", price: "$5.99/mes" },
-  { name: "Estándar", price: "$9.99/mes" },
-  { name: "Premium", price: "$14.99/mes" },
-];
+import { ref } from "vue";
+import { plansMock } from "../../utils/data.ts";
+
+const plans = ref(plansMock);
 </script>
 
 <style scoped lang="scss">

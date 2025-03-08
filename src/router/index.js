@@ -24,11 +24,6 @@ const router = createRouter({
       name: "series",
       component: () => import("../views/SeriesView.vue"),
     },
-    {
-      path: "/serie/:id",
-      name: "serie",
-      component: () => import("../views/SerieIdView.vue"),
-    },
   ],
 });
 

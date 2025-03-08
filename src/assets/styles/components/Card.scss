@@ -1,0 +1,80 @@
+.card {
+  height: 400px;
+  position: relative;
+  perspective: 1000px;
+}
+.card__front--image {
+  width: 278px;
+  height: 400px;
+  object-fit: fill;
+  border-radius: 10px;
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  width: 280px;
+  height: 400px;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  transition: transform 0.6s;
+}
+.card__back {
+  width: 280px;
+  height: 400px;
+}
+.card__front {
+  background: #222;
+}
+
+.card__back {
+  background: #333;
+  color: white;
+  transform: rotateY(180deg);
+  &-description {
+    padding: 1rem;
+    &-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    &-overview {
+      font-size: 1rem;
+      margin-top: 1rem;
+      max-height: calc(1.2em * 10);
+      overflow: hidden;
+      position: relative;
+    }
+    &-button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #f1c40f;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      position: fixed;
+      bottom: 1rem;
+      text-decoration: none;
+      &:hover {
+        background: #f39c12;
+      }
+    }
+  }
+}
+.card__back::after {
+  content: "...";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  padding-left: 5px;
+}
+
+.card:hover .card__front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card__back {
+  transform: rotateY(0deg);
+}

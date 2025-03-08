@@ -1,19 +1,6 @@
 import { defineStore } from "pinia";
 import { getSeries } from "../services/seriesService";
-
-interface Serie {
-  id: number;
-  title: string;
-  overview: string;
-  poster_path: string;
-}
-
-interface SerieState {
-  series: Serie[];
-  loading: boolean;
-  error: string | null;
-  lastFetch: number;
-}
+import type { SerieState } from "../utils/interfaces";
 
 export const useSeriesStore = defineStore("series", {
   state: (): SerieState => ({

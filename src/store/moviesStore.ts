@@ -3,44 +3,11 @@ import {
   getMovieById,
   getMovieCreditsId,
   getMovies,
+  getMoviesGenres,
   getMovieSimilarId,
+  getTrendingMovies,
 } from "../services/moviesService";
-
-interface Movie {
-  id: number;
-  backdrop_path: string;
-  comments: string;
-  homepage: string;
-  genres: { id: number; name: string }[];
-  overview: string;
-  poster_path: string;
-  popularity: number;
-  tagline: string;
-  title: string;
-  vote_count: number;
-}
-
-interface Credit {
-  id: number;
-  name: string;
-  profile_path: string;
-}
-
-interface SimilarMovie {
-  id: number;
-  title: string;
-  poster_path: string;
-}
-
-interface MovieState {
-  movies: Movie[];
-  movie: Movie | null;
-  credits: Credit[];
-  similarMovies: SimilarMovie[];
-  loading: boolean;
-  error: string | null;
-  lastFetch: number;
-}
+import type { MovieState } from "../utils/interfaces";
 
 export const useMoviesStore = defineStore("movies", {
   state: (): MovieState => ({
@@ -48,6 +15,8 @@ export const useMoviesStore = defineStore("movies", {
     movie: null,
     credits: [],
     similarMovies: [],
+    trendingMovies: [],
+    genres: [],
     loading: false,
     error: null,
     lastFetch: 0,
@@ -110,6 +79,32 @@ export const useMoviesStore = defineStore("movies", {
         this.similarMovies = similarMovies?.slice(0, 10);
       } catch (err) {
         this.error = `Error loading movie with id ${id}`;
+      } finally {
+        this.loading = false;
+      }
+    },
+    async fetchMoviesGenres() {
+      this.loading = true;
+      this.error = null;
+
+      try {
+        const genres = await getMoviesGenres();
+        this.genres = genres;
+      } catch (err) {
+        this.error = "Error loading genres";
+      } finally {
+        this.loading = false;
+      }
+    },
+    async fetchTrendingMovies() {
+      this.loading = true;
+      this.error = null;
+
+      try {
+        const trendingMovies = await getTrendingMovies();
+        this.trendingMovies = trendingMovies;
+      } catch (err) {
+        this.error = "Error loading movies";
       } finally {
         this.loading = false;
       }
