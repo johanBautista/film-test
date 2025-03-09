@@ -1,7 +1,9 @@
 <template>
   <header class="header">
     <div class="header__logo-nav">
-      <h1 class="header__logo">4FRAME</h1>
+      <h1 class="header__logo">
+        <router-link class="header__logo-item" to="/">4FRAME</router-link>
+      </h1>
       <nav class="header__nav">
         <router-link class="header__nav-item" to="/"> FOR YOU </router-link>
         <router-link class="header__nav-item" to="/movies">
