@@ -3,7 +3,6 @@ import apiClient from "./axiosInstance";
 export const getMovies = async () => {
   try {
     const response = await apiClient.get("discover/movie");
-    console.log("services", response.data.results);
     return response.data.results;
   } catch (error) {
     throw error;

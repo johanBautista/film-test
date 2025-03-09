@@ -8,6 +8,11 @@
     font-weight: lighter;
     color: #f9f9f9;
     text-decoration: underline;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      margin: 5rem 0;
+    }
   }
 
   &-grid {

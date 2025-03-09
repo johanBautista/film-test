@@ -55,6 +55,9 @@
     display: flex;
     justify-content: center;
     gap: 1.5rem;
+    @media (max-width: 768px) {
+      margin-top: 2rem;
+    }
   }
 
   &__social-item {

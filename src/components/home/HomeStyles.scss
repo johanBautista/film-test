@@ -19,6 +19,10 @@
   color: $dark-text;
   padding: $spacing-medium;
 
+  @media (max-width: 768px) {
+    width: auto;
+  }
+
   &__content {
     max-width: 600px;
   }
@@ -59,6 +63,9 @@
     margin-bottom: 1rem;
     color: #ffffffdf;
     font-weight: normal;
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
   }
 
   &__grid {
@@ -84,6 +91,10 @@
       max-width: 1200px;
       margin: 0 auto;
 
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       &-pill {
         padding: 10px 16px;
         text-align: center;
@@ -102,6 +113,9 @@
   &__image {
     width: 100%;
     border-radius: 8px;
+    @media (max-width: 768px) {
+      width: 80%;
+    }
   }
 }
 
@@ -110,6 +124,12 @@
   display: flex;
   gap: 20px;
   justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
   &__item {
     width: 300px;
     height: 300px;

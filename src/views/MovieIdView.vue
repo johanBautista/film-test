@@ -5,6 +5,7 @@
   <div v-else-if="movie">
     <div class="page">
       <aside class="page-sidebar">
+        <h1 class="page-sidebar__title-mobile">{{ movie.title }}</h1>
         <div>
           <img
             :src="getMovieImageUrl(movie.poster_path)"
