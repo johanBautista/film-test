@@ -5,7 +5,6 @@
         <router-link class="header__logo-item" to="/">4FRAME</router-link>
       </h1>
       <nav class="header__nav">
-        <router-link class="header__nav-item" to="/"> FOR YOU </router-link>
         <router-link class="header__nav-item" to="/movies">
           MOVIES
         </router-link>
