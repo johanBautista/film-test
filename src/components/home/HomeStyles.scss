@@ -49,7 +49,7 @@
     transition: background 0.3s ease;
 
     &:hover {
-      background: darken($accent, 10%);
+      background: $dark-accent, 10%;
     }
   }
 }
